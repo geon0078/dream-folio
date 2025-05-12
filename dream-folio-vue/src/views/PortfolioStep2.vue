@@ -61,4 +61,10 @@
 
 <script setup>
 // 다음 단계 라우팅은 router.push('/portfolio/step3') 식으로 추가 가능
+import { useRouter } from 'vue-router'
+import FormInput from '@/components/form/FormInput.vue'
+import FormSelect from '@/components/form/FormSelect.vue'
+import FormActivity from '@/components/form/FormActivity.vue'
+
+
 </script>
