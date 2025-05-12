@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 import openai
 
-from openai import OpenAI  # ✅ v1.x용 클라이언트
+from openai import OpenAI 
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
