@@ -43,5 +43,16 @@ app.post('/api/portfolio', async (req, res) => {
     res.status(500).json({ error: e.message })
   }
 })
+app.post('/api/portfolio-step2', async (req, res) => {
+  try {
+    console.log('📥 Step2 받은 데이터:', req.body)
+    // 👉 저장 또는 처리 로직
+    res.status(201).json({ message: 'Step2 저장 완료' })
+  } catch (e) {
+    console.error('❌ Step2 저장 실패:', e)
+    res.status(500).json({ error: e.message })
+  }
+})
+
 
 app.listen(3000, () => console.log('✅ 서버 실행 중: http://localhost:3000'))

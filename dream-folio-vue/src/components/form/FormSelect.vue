@@ -7,8 +7,10 @@
     <div class="relative">
       <select
         class="w-full appearance-none border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring focus:border-violet-500"
+        :value="modelValue"
+        @change="$emit('update:modelValue', $event.target.value)"
       >
-        <option disabled selected hidden>{{ placeholder }}</option>
+        <option disabled value="">{{ placeholder }}</option>
         <option
           v-for="(option, index) in options"
           :key="index"
@@ -35,5 +37,8 @@ defineProps({
     type: Array,
     default: () => [],
   },
+  modelValue: String
 })
+
+defineEmits(['update:modelValue'])
 </script>

@@ -7,6 +7,8 @@ import FormSelect from '@/components/form/FormSelect.vue' // ✅ 새로 추가�
 import StartScreen from '@/components/StartScreen.vue' // 또는 '../components/StartScreen.vue'
 import PortfolioStep1 from '@/views/PortfolioStep1.vue' // ✅ 새로 추가한 경로
 import PortfolioStep2 from '@/views/PortfolioStep2.vue' // ✅ 새로 추가한 경로
+import ChatScreen from '@/views/ChatScreen.vue' // ✅ 새로 추가한 경로
+import RoadmapView from '@/views/RoadmapView.vue' // ✅ 새로 추가한 경로
 
 const routes = [
   {
@@ -23,9 +25,12 @@ const routes = [
     path: '/portfolio/step2', // ✅ 이 부분만 추가!
     name: 'PortfolioStep2',
     component: PortfolioStep2,
-  }
-  // 필요하다면 로그인, 회원가입 라우트도 여기에 추가
-]
+  },
+   {
+    path: '/portfolio/chat', // ✅ 이 부분만 추가!
+    name: 'ChatScreen',
+    component: ChatScreen,
+  } ]
 
 const router = createRouter({
   history: createWebHistory(),

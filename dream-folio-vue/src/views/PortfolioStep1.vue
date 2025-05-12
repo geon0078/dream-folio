@@ -11,13 +11,14 @@
         </div>
 
         <div class="space-y-4">
-          <FormInput label="이름" placeholder="이름을 입력하세요." required />
-          <FormInput label="생년월일" placeholder="생년월일을 입력하세요." required />
+          <FormInput label="이름" placeholder="이름을 입력하세요." v-model="form.name" required />
+          <FormInput label="생년월일" placeholder="생년월일을 입력하세요." v-model="form.birth" required />
 
           <FormSelect
             label="대학교"
             placeholder="대학교를 선택하세요."
             :options="['서울대학교', '을지대학교']"
+            v-model="form.university"
             required
           />
 
@@ -25,6 +26,7 @@
             label="전공명"
             placeholder="전공을 선택하세요."
             :options="['의료IT', '빅데이터의료융합']"
+            v-model="form.major"
             required
           />
         </div>
@@ -41,10 +43,13 @@
         </div>
 
         <div class="space-y-4">
-          <FormActivity type="동아리" placeholder="내용을 입력하세요." />
-          <FormActivity type="인턴십" placeholder="내용을 입력하세요." />
-          <FormActivity type="자격증" placeholder="내용을 입력하세요." />
-          <FormActivity type="수상내역" placeholder="내용을 입력하세요." />
+          <FormActivity
+            v-for="(activity, index) in form.activities"
+            :key="index"
+            :type="activity.type"
+            placeholder="내용을 입력하세요."
+            v-model="form.activities[index].value"
+          />
         </div>
       </section>
 
